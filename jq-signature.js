@@ -24,7 +24,11 @@
 	      background: '#FFFFFF',
 	      width: 300,
 	      height: 100,
-	      autoFit: false
+	      autoFit: false,
+        //default canvasBgColor is transparent.
+        //if you want to set a canvas bgcolor,
+        //eg. canvasBgColor:'#FFFFFF',
+        canvasBgColor:'transparent'
 	    },
 	    canvasFixture = '<canvas></canvas>',
 			idCounter = 0;
@@ -187,6 +191,9 @@
       this.ctx = this.canvas.getContext("2d");
       this.ctx.strokeStyle = this.settings.lineColor;
       this.ctx.lineWidth = this.settings.lineWidth;
+	    this.canvas.fillStyle= this.settings.canvasBgColor;
+			this.canvas.fillRect(0, 0,this.canvas.width,this.canvas.height);
+      
     },
 
     // Resize the canvas element
